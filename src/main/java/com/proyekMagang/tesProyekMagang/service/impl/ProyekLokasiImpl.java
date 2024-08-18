@@ -32,17 +32,14 @@ public class ProyekLokasiImpl implements ProyekLokasiService {
 
     @Override
     public List<Proyek_Lokasi> getProyekLokasi() {
-        // Mengambil semua data Proyek_Lokasi dari repository
         List<Proyek_Lokasi> proyekLokasiList = proyekLokasiRepository.findAll();
         
-        // Loop melalui semua data Proyek_Lokasi dan ambil detail Lokasi dan Proyek
         for (Proyek_Lokasi proyekLokasi : proyekLokasiList) {
             Lokasi lokasi = lokasiservice.getLokasiById(proyekLokasi.getLokasiId());
             Proyek proyek = proyekservice.getProyekById(proyekLokasi.getProyekId());
             
-            // Jika Anda ingin menambahkan informasi detail lokasi dan proyek ke proyekLokasi
-            proyekLokasi.setLokasi(lokasi); // Pastikan Proyek_Lokasi memiliki field untuk Lokasi
-            proyekLokasi.setProyek(proyek);  // Pastikan Proyek_Lokasi memiliki field untuk Proyek
+            proyekLokasi.setLokasi(lokasi); 
+            proyekLokasi.setProyek(proyek);  
         }
         
         return proyekLokasiList;

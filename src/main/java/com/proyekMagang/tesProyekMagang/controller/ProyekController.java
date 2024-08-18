@@ -43,25 +43,6 @@ public class ProyekController {
     
     @PostMapping("/addproyek")
     public ResponseEntity<Proyek> addProyek(@RequestBody ProyekLokasiRequest request) {
-//        Proyek proyek = new Proyek();
-//        proyek.setNamaProyek(request.getNamaProyek());
-//        proyek.setClient(request.getClient());
-//        proyek.setTglMulai(request.getTglMulai());
-//        proyek.setTglSelesai(request.getTglSelesai());
-//        proyek.setPimpinanProyek(request.getPimpinanProyek());
-//        proyek.setKeterangan(request.getKeterangan());
-//        proyek.setCreateAt();
-//
-//        Lokasi lokasi = new Lokasi();
-//        lokasi.setNamaLokasi(request.getNamaLokasi());
-//        lokasi.setNegara(request.getNegara());
-//        lokasi.setProvinsi(request.getProvinsi());
-//        lokasi.setKota(request.getKota());
-//        lokasi.setCreateAt();
-//
-//
-//        proyek = proyekService.addProyek(proyek, lokasi);
-//        return ResponseEntity.ok(proyek);
 
         Proyek proyek = new Proyek();
         proyek.setNamaProyek(request.getNamaProyek());
@@ -74,7 +55,6 @@ public class ProyekController {
 
         proyek = proyekService.saveProyek(proyek);
 
-        // Membuat dan menyimpan objek Lokasi
         Lokasi lokasi = new Lokasi();
         lokasi.setNamaLokasi(request.getNamaLokasi());
         lokasi.setNegara(request.getNegara());
@@ -84,7 +64,6 @@ public class ProyekController {
 
         lokasi = lokasiService.saveLokasi(lokasi);
 
-        // Membuat dan menyimpan objek Proyek_Lokasi
         Proyek_Lokasi proyekLokasi = new Proyek_Lokasi();
         proyekLokasi.setProyek(proyek);
         proyekLokasi.setLokasi(lokasi);

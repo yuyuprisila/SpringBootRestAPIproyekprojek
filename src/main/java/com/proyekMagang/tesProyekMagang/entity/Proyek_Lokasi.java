@@ -36,13 +36,12 @@ public class Proyek_Lokasi {
     @JoinColumn(name = "lokasi_id")
     private Lokasi lokasi;
 
-    // Getter and Setter for proyekId and lokasiId
     public int getProyekId() {
         return proyek != null ? proyek.getId() : 0;
     }
 
     public void setProyekId(int proyekId) {
-        // Method is needed for proper mapping
+       
     }
 
     public int getLokasiId() {
@@ -50,6 +49,6 @@ public class Proyek_Lokasi {
     }
 
     public void setLokasiId(int lokasiId) {
-        // Method is needed for proper mapping
+        
     }
 }
